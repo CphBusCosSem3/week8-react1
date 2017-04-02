@@ -9,7 +9,7 @@ The first and default template, should show a table with users, built as a React
 ## Complete the exercise by following these steps:
 
 1. Create a new project with [create-react-app](https://github.com/facebookincubator/create-react-app)
-2. Rememember to include the Router package using: npm install ```react-router@3 --save```
+2. Remember to include the Router package using: npm install ```react-router@3 --save```
 3. Add to new js files. One for each of the 2 components. Remember to import react and export the component. 
 4. In App.js setup the routes to refer to each component. Let the main component be the root of the application url
 5. Use props to add the person array to the PersonList component. Just use hardcoded values for this exercise, as sketched below:
