@@ -4,7 +4,7 @@
 
 Here is an article with [10 usefull design patterns for working with React](https://hackernoon.com/10-react-mini-patterns-c1da92f068c5#.uvrnr03q1) 
 
-Here is a step by step tutorial on [react router](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up). When using this tutorial do it in a new create-react-app instead of cloning the project from the tutorial. (The projects used in the tutorial are using webpack directly which is a bit harder to configure)
+Here is a step by step tutorial on [react router](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up). When using this tutorial do it in a new create-react-app instead of cloning the project from the tutorial. (The projects used in the tutorial are using webpack directly which is a bit harder to configure). Another tutorial to suplement with: [Tutorial](https://medium.com/@dabit3/beginner-s-guide-to-react-router-53094349669#.rdjy76252)
 
 ###React-router
 
@@ -66,6 +66,25 @@ ReactDOM.render((
 - This means all the content between begin and end-tag of component.
 - [See example here](https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment)
 
+
+### Routing with parameters
+
+Here is an example of how parameters (props) are put in to the component when using the router. Note that the attributes are now put on the Route component and not on the App component as we would normally do.
+
+```react
+facade.loadCars(() => {
+ReactDOM.render(
+    (<Router history={hashHistory}>
+        <Route facade={facade} path='/' component={App}>
+            <IndexRoute facade={facade} delete={App.deleteCar} edit={App.grabCar} component={UsedCarsView} />
+
+            <Route path='/add' component={CarInput} />
+            <Route path='*' component={NotFound} />
+        </Route>
+    </Router>)
+, document.getElementById('root'));
+});
+```
 
 ### lifecycle methods
 

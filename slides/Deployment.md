@@ -38,6 +38,8 @@
 
    (If project uses client-side routing, then index.html should be renamed to 200.html)
 
+   ## Redeploy
+
 7. After changes to the project redeploy with these 2 commands
 
    ```

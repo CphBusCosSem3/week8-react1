@@ -55,7 +55,7 @@ In git bash run the js script like this
 bash -c "node mockdata.js > booksdb.json"
 ```
 
-It will write and array of 15 books objects into a file: booksjb.json
+It will write an array of 15 book objects into a file: booksjb.json
 
 Open the file to see the data format (or in the bash just `node mockdata.js` without the pipe `>` character)
 
@@ -67,5 +67,39 @@ json-server -p 4000 --watch booksdb.json
 
 open postman (or for get request use the browser) and open url: `http://localhost:4000/books`
 
+## To include json-server in a frontend (react) project
 
+1. create a <something>.json file in the root project folder (same folder as package.json)
 
+   1. Format must be like:
+
+      ```json
+      {
+        "api name": [
+          {"prop1":"val", "prop2":"val"},{"":"","":""},{},{}
+        ]
+      }
+      ```
+
+2. install json-server in the project
+
+   ```
+   npm install --save json-server
+   ```
+
+3. Ad a script to package.json (like line 5 below:) (todos.json is the file created in step 1 above)
+
+   ```json
+    "scripts": {
+       "start": "node scripts/start.js",
+       "build": "node scripts/build.js",
+       "test": "node scripts/test.js --env=jsdom",
+       "backend": "json-server -p 4000 --watch todos.json"
+     },
+   ```
+
+4. Now the json-server can be started with: 
+
+   ```
+   npm run backend
+   ```

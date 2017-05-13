@@ -78,6 +78,7 @@ class BooksFacade {
 
     editBook(book) {
         for (var i = 0; i < this._books.length; i++) {
+			let name = '';
             if (this._books[i].id === book.id) {
                 this._books[i] = Object.assign({}, book); //Object.assign creates a copy
             }
